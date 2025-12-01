@@ -6,48 +6,48 @@ Helmet & License Plate Detection with OCR
 
 Demo
 
-examples/
-   input.jpg
-   output.jpg
+examples/<br>
+   input.jpg<br>
+   output.jpg<br>
 
-Features
-    Helmet Detection
-    No Helmet Detection
-    License Plate Detection
-    OCR Text Extraction (EasyOCR)
-    Fast inference (GPU / GTX 1650 supported)
-    YOLOv8-based custom training
-    Clean modular project structure
-    Automatic annotation saving (output images)
+Features<br>
+   - Helmet Detection<br>
+   - No Helmet Detection<br>
+   - License Plate Detection<br>
+   - OCR Text Extraction (EasyOCR)<br>
+   - Fast inference (GPU / GTX 1650 supported)<br>
+   - YOLOv8-based custom training<br>
+   - Clean modular project structure<br>
+   - Automatic annotation saving (output images)<br>
 
 
 Project Structure
 
-project/
+project/<br>
+│<br>
+├── train.py                 # training script<br>
+├── inference.py             # helmet + LP detection + OCR<br>
+├── data.yaml                # dataset YAML<br>
+├── requirements.txt         # dependencies<br>
+├── README.md                # documentation (this file)<br>
+│<br>
+├── examples/                # sample outputs<br>
+│     ├── input.jpg<br>
+│     ├── output.jpg<br>
 │
-├── train.py                 # training script
-├── inference.py             # helmet + LP detection + OCR
-├── data.yaml                # dataset YAML
-├── requirements.txt         # dependencies
-├── README.md                # documentation (this file)
-│
-├── examples/                # sample outputs
-│     ├── input.jpg
-│     ├── output.jpg
-│
-├── models/                  # recommended for toring best.pt
-│     ├── helmet_lp_best.pt
-│
-└── utils/                   # optional helpers (preprocessing, etc.)
+├── models/                  # recommended for toring best.pt<br>
+│     ├── helmet_lp_best.pt<br>
+│<br>
+└── utils/                   # optional helpers (preprocessing, etc.)<br>
 
 Installation
 
-Clone the repository
-git clone https://github.com/yourusername/helmet-lp-ocr.git
-cd helmet-lp-ocr
+- Clone the repository
+- git clone https://github.com/yourusername/helmet-lp-ocr.git
+- cd helmet-lp-ocr
 
 Install dependencies
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 
 
@@ -77,28 +77,27 @@ Running Inference (Helmet + LP OCR)
 
 Output:
 
-Annotated image saved as output_image.jpg
+- Annotated image saved as output_image.jpg
+- OCR text printed in terminal
 
-OCR text printed in terminal
-
-
+  
 Example Output
-    Saved annotated image: output_image.jpg
-    License Plate → MH12AB1234
-    No helmet detected
+   - Saved annotated image: output_image.jpg
+   - License Plate → MH12AB1234
+   - No helmet detected
 
-
+  
 Dataset
 
 Dataset should include:
 
-datasets/
- ├── images/
- │     ├── train/
- │     ├── val/
- └── labels/
-       ├── train/
-       ├── val/
+datasets/<br>
+ ├── images/<br>
+ │     ├── train/<br>
+ │     ├── val/<br>
+ └── labels/<br>
+ |     ├── train/<br>
+ |     ├── val/<br>
 
 
 Classes in data.yaml:
