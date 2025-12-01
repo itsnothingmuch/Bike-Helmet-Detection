@@ -1,0 +1,8 @@
+runs/
+__pycache__/
+*.pt
+*.jpg
+*.png
+*.mp4
+.DS_Store
+

@@ -1,0 +1,115 @@
+Helmet & License Plate Detection with OCR
+    Real-time violation detection using YOLOv8 + EasyOCR / PaddleOCR
+
+    This project detects helmets, no-helmet violations, and license plates, then extracts the plate text using OCR.
+    It is designed for smart surveillance, traffic monitoring, and college/industry safety enforcement systems.
+
+Demo
+
+examples/
+   input.jpg
+   output.jpg
+
+Features
+    Helmet Detection
+    No Helmet Detection
+    License Plate Detection
+    OCR Text Extraction (EasyOCR)
+    Fast inference (GPU / GTX 1650 supported)
+    YOLOv8-based custom training
+    Clean modular project structure
+    Automatic annotation saving (output images)
+
+
+Project Structure
+
+project/
+│
+├── train.py                 # training script
+├── inference.py             # helmet + LP detection + OCR
+├── data.yaml                # dataset YAML
+├── requirements.txt         # dependencies
+├── README.md                # documentation (this file)
+│
+├── examples/                # sample outputs
+│     ├── input.jpg
+│     ├── output.jpg
+│
+├── models/                  # recommended for toring best.pt
+│     ├── helmet_lp_best.pt
+│
+└── utils/                   # optional helpers (preprocessing, etc.)
+
+Installation
+
+Clone the repository
+git clone https://github.com/yourusername/helmet-lp-ocr.git
+cd helmet-lp-ocr
+
+Install dependencies
+pip install -r requirements.txt
+
+
+
+Training Your Model
+
+    Your training script:
+
+    python train.py --data data.yaml --weights yolov8n.pt 
+
+
+    Training results will be saved to:
+
+    runs/train/helmet_lp_detector/
+
+
+    The best model will be:
+
+    runs/train/helmet_lp_detector/weights/best.pt
+
+
+Running Inference (Helmet + LP OCR)
+
+    Use your new inference.py:
+
+    python inference.py --source path/to/image.jpg --save
+
+
+Output:
+
+Annotated image saved as output_image.jpg
+
+OCR text printed in terminal
+
+
+Example Output
+    Saved annotated image: output_image.jpg
+    License Plate → MH12AB1234
+    No helmet detected
+
+
+Dataset
+
+Dataset should include:
+
+datasets/
+ ├── images/
+ │     ├── train/
+ │     ├── val/
+ └── labels/
+       ├── train/
+       ├── val/
+
+
+Classes in data.yaml:
+
+names:
+  - Helmet
+  - License plate
+  - no helmet
+
+
+Contributing
+
+    Pull requests are welcome!
+    If you want to improve detection, add datasets, or enhance OCR—feel free to contribute.

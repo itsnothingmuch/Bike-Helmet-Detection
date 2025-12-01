@@ -1,0 +1,9 @@
+path: #path to dataset
+train: train\images
+val: val\images
+test: test\images
+
+names:
+  0: Helmet
+  1: License plate
+  2: no helmet
