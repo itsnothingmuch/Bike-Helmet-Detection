@@ -110,5 +110,5 @@ names:
 
 Contributing
 
-    Pull requests are welcome!
+    Pull requests are welcome! Appreciate credit if used
     If you want to improve detection, add datasets, or enhance OCR—feel free to contribute.
